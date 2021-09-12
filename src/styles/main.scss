@@ -1,0 +1,117 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+body {
+	height: 130vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $Light-Grayish-Blue;
+}
+
+// MAIN CONTAINER
+
+#main-container {
+	background-color: white;
+	width: 88vw;
+	max-width: 400px;
+	border-radius: 10px;
+	box-shadow: 0 0 3px -2px black;
+
+	#img-wrapper {
+		overflow-y: hidden;
+		height: 220px;
+
+		#main-image {
+			border-radius: 10px 10px 0 0;
+			height: 120% !important;
+			//max-height: 275px;
+		}
+	}
+
+	#text-section {
+		padding: 0 17px;
+
+		#text-section-container {
+			#header-text {
+				padding-top: 35px;
+				font-size: 1.05rem;
+				line-height: 1.5rem;
+				font-weight: 700;
+				color: $Very-Dark-Grayish-Blue;
+			}
+
+			#description-text {
+				color: $Desaturated-Dark-Blue;
+				font-size: 0.84rem;
+				line-height: 1.35rem;
+			}
+		}
+	}
+}
+
+// PROFILE COMPONENT
+#profile {
+	#{&}-img {
+		width: 40px;
+	}
+	#{&}-name {
+		font-weight: 700;
+		color: $Very-Dark-Grayish-Blue;
+	}
+	#{&}-date {
+		color: $Grayish-Blue;
+	}
+	#share-btn {
+		background-color: $Light-Grayish-Blue;
+		width: fit-content;
+		padding: 10px;
+	}
+
+	#toggle-container {
+		
+		.icons {
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		height: 100vh;
+	}
+
+	#main-container {
+		background-color: white;
+		width: 85vw;
+		max-width: 715px;
+
+		#header-text {
+			font-size: 1.2rem;
+		}
+
+		#img-wrapper {
+			overflow-x: hidden;
+			width: 40%;
+			height: auto;
+
+			#main-image {
+				border-radius: 10px 0 0 10px;
+				width: 122.7% !important;
+				height: 100% !important;
+				max-height: none;
+			}
+		}
+	}
+
+		#text-section {
+		padding: 0 0px;
+		
+		#header-text {
+			font-size: 1.2rem !important;
+		}
+
+		#description-text {
+			font-size: .83rem !important;
+		}
+	}
+}

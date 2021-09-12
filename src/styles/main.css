@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+body {
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  height: 130vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecf2f8;
+}
+
+#main-container {
+  background-color: white;
+  width: 88vw;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px -2px black;
+}
+
+#main-container #img-wrapper {
+  overflow-y: hidden;
+  height: 220px;
+}
+
+#main-container #img-wrapper #main-image {
+  border-radius: 10px 10px 0 0;
+  height: 120% !important;
+}
+
+#main-container #text-section {
+  padding: 0 17px;
+}
+
+#main-container #text-section #text-section-container #header-text {
+  padding-top: 35px;
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: #48556a;
+}
+
+#main-container #text-section #text-section-container #description-text {
+  color: #6d7f97;
+  font-size: 0.84rem;
+  line-height: 1.35rem;
+}
+
+#profile #profile-img {
+  width: 40px;
+}
+
+#profile #profile-name {
+  font-weight: 700;
+  color: #48556a;
+}
+
+#profile #profile-date {
+  color: #9eafc2;
+}
+
+#profile #share-btn {
+  background-color: #ecf2f8;
+  width: fit-content;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  #main-container {
+    background-color: white;
+    width: 85vw;
+    max-width: 715px;
+  }
+  #main-container #header-text {
+    font-size: 1.2rem;
+  }
+  #main-container #img-wrapper {
+    overflow-x: hidden;
+    width: 40%;
+    height: auto;
+  }
+  #main-container #img-wrapper #main-image {
+    border-radius: 10px 0 0 10px;
+    width: 122.7% !important;
+    height: 100% !important;
+    max-height: none;
+  }
+  #text-section {
+    padding: 0 0px;
+  }
+  #text-section #header-text {
+    font-size: 1.2rem !important;
+  }
+  #text-section #description-text {
+    font-size: .83rem !important;
+  }
+}
+/*# sourceMappingURL=main.css.map */
