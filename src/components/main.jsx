@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Footer from "./Footer";
 import Profile from "./Profile";
-import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap/dist/css/bootstrap.css'
 
 class Main extends Component {
 	render() {
