@@ -29,6 +29,7 @@ $("*").on("click", () => {
 	const toggleContainer = $('#toggle-container');
 
 	if(!(toggleContainer.css('max-height') == '0px') && !mouseOver) {
+    //toggleContainer.css('animation', 'none');
     toggleContainer.css('max-height', '0');
 		toggleContainer.css('overflow', 'hidden');
 		toggleContainer.css('transform', 'translateY(-40px)');

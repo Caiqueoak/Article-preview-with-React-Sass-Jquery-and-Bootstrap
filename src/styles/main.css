@@ -102,7 +102,6 @@ body {
   box-shadow: 0 0 7px -2px black;
   transform: translateY(-40px);
   transition: all .3s;
-  animation: hoverAnimation infinite 1s alternate;
 }
 
 #profile #button-container #toggle-container:hover {

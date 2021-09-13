@@ -93,8 +93,8 @@ body {
 			position: absolute;
 			box-shadow: 0 0 7px -2px black;
 			transform: translateY(-40px);
-			transition: all .3s;
-			animation: hoverAnimation infinite 1s alternate;
+			transition: all .3s ;
+			//animation: hoverAnimation infinite 1s alternate;
 			
 			&:hover {
 				box-shadow: 0 0 10px -2px black;

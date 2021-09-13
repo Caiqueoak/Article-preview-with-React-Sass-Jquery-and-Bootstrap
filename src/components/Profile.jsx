@@ -7,6 +7,7 @@ import $ from 'jquery';
 function togglePopup() {
 	const toggleContainer = $('#toggle-container');
 
+	//toggleContainer.css('animation', 'hoverAnimation infinite 1s alternate');
 	toggleContainer.css('max-height', '100px');
 	toggleContainer.css('overflow', 'visible');
 	toggleContainer.css('transform', 'translateY(-75px)');
