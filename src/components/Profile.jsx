@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Popup from "./Popup";
+import "../styles/main.css";
 import "bootstrap/dist/css/bootstrap.css";
 import $ from 'jquery';
 
@@ -7,10 +8,12 @@ import $ from 'jquery';
 function togglePopup() {
 	const toggleContainer = $('#toggle-container');
 
-	//toggleContainer.css('animation', 'hoverAnimation infinite 1s alternate');
+	//toggleContainer.css('animation', 'slideUpAnimation forwards .4s');
+	//toggleContainer.css('animation', 'bounceAnimation infinite 1s alternate');
 	toggleContainer.css('max-height', '100px');
 	toggleContainer.css('overflow', 'visible');
 	toggleContainer.css('transform', 'translateY(-75px)');
+
 }
 
 const Profile = () => {

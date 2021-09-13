@@ -43,6 +43,7 @@ class Main extends Component {
 
 				</main>
 				
+				<Footer />
 			</React.StrictMode>
 		);
 	}

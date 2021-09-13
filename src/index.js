@@ -1,6 +1,3 @@
-/* TODO
-- ADJUST OVERFLOW IN MOBILE RESOLUTION (FOOTER)
-*/
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -29,7 +26,7 @@ $("*").on("click", () => {
 	const toggleContainer = $('#toggle-container');
 
 	if(!(toggleContainer.css('max-height') == '0px') && !mouseOver) {
-    //toggleContainer.css('animation', 'none');
+    //toggleContainer.css('animation', 'slideDownAnimation linear .5s');
     toggleContainer.css('max-height', '0');
 		toggleContainer.css('overflow', 'hidden');
 		toggleContainer.css('transform', 'translateY(-40px)');

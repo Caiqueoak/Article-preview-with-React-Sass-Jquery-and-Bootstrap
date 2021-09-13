@@ -9,9 +9,29 @@ body {
 	background-color: $Light-Grayish-Blue;
 }
 
-@keyframes hoverAnimation {
-	from {transform: translateY(-75px);}
-	to {transform: translateY(-73px);}
+@keyframes bounceAnimation {
+	from {
+		transform: translateY(-75px);
+	}
+	to {
+		transform: translateY(-73px);
+	}
+}
+@keyframes slideUpAnimation {
+	from {
+		transform: translateY(-40px);
+	}
+	to {
+		transform: translateY(-75px);
+	}
+}
+@keyframes slideDownAnimation {
+	from {
+		transform: translateY(-75px);
+	}
+	to {
+		transform: translateY(-40px);
+	}
 }
 
 // MAIN COMPONENT
@@ -75,13 +95,13 @@ body {
 			width: fit-content;
 			padding: 10px;
 			border: none;
-			transition: all .3s;
+			transition: all 0.3s;
 
 			&:hover {
 				box-shadow: 0 0 5px -2px black;
 			}
 		}
-	
+
 		#toggle-container {
 			@include centered-flex;
 			overflow: hidden;
@@ -93,11 +113,12 @@ body {
 			position: absolute;
 			box-shadow: 0 0 7px -2px black;
 			transform: translateY(-40px);
-			transition: all .3s ;
-			//animation: hoverAnimation infinite 1s alternate;
-			
+			transition: all 0.3s;
+			//animation: slideUpAnimation forwards .4s;
+
 			&:hover {
 				box-shadow: 0 0 10px -2px black;
+				//animation: bounceAnimation 0.3s infinite alternate;
 			}
 
 			#square {
@@ -113,16 +134,14 @@ body {
 			p {
 				margin: 0;
 				color: $Grayish-Blue;
-				letter-spacing: .27rem;
-				font-size: .7rem;
+				letter-spacing: 0.27rem;
+				font-size: 0.7rem;
 			}
 			#icons-container {
 				@include centered-flex;
 				list-style-type: none;
 				margin: 0;
 				column-gap: 13px;
-
-				
 			}
 		}
 	}
@@ -131,10 +150,13 @@ body {
 // FOOTER COMPONENT
 footer {
 	position: absolute;
+	font-size: 0.8rem;
 	font-weight: 700;
 	left: 50%;
 	transform: translateX(-50%);
-	display: none;
+	text-align: center;
+	top: 122vh;
+	width: fit-content;
 }
 
 // DESKTOP/TABLET RESOLUTION
@@ -167,28 +189,27 @@ footer {
 		}
 	}
 
-		#text-section {
+	#text-section {
 		padding: 0 0px;
-		
+
 		#header-text {
 			font-size: 1.2rem !important;
 		}
 
 		#description-text {
-			font-size: .83rem !important;
+			font-size: 0.83rem !important;
 		}
 	}
 
 	.icons:hover {
-					
 		img {
-			transition: all .3s;
+			transition: all 0.3s;
 			transform: translateY(-3px);
 			box-shadow: 0 0 30px -2px $Desaturated-Dark-Blue;
 		}
 	}
 
 	footer {
-		bottom: 5px;
+		top: 95vh;
 	}
 }

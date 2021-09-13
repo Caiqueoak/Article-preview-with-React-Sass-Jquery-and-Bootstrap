@@ -12,12 +12,30 @@ body {
   background-color: #ecf2f8;
 }
 
-@keyframes hoverAnimation {
+@keyframes bounceAnimation {
   from {
     transform: translateY(-75px);
   }
   to {
     transform: translateY(-73px);
+  }
+}
+
+@keyframes slideUpAnimation {
+  from {
+    transform: translateY(-40px);
+  }
+  to {
+    transform: translateY(-75px);
+  }
+}
+
+@keyframes slideDownAnimation {
+  from {
+    transform: translateY(-75px);
+  }
+  to {
+    transform: translateY(-40px);
   }
 }
 
@@ -81,7 +99,7 @@ body {
   width: fit-content;
   padding: 10px;
   border: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 #profile #button-container #share-btn:hover {
@@ -101,7 +119,7 @@ body {
   position: absolute;
   box-shadow: 0 0 7px -2px black;
   transform: translateY(-40px);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 #profile #button-container #toggle-container:hover {
@@ -122,8 +140,8 @@ body {
 #profile #button-container #toggle-container p {
   margin: 0;
   color: #9eafc2;
-  letter-spacing: .27rem;
-  font-size: .7rem;
+  letter-spacing: 0.27rem;
+  font-size: 0.7rem;
 }
 
 #profile #button-container #toggle-container #icons-container {
@@ -137,10 +155,13 @@ body {
 
 footer {
   position: absolute;
+  font-size: 0.8rem;
   font-weight: 700;
   left: 50%;
   transform: translateX(-50%);
-  display: none;
+  text-align: center;
+  top: 122vh;
+  width: fit-content;
 }
 
 @media screen and (min-width: 768px) {
@@ -173,15 +194,15 @@ footer {
     font-size: 1.2rem !important;
   }
   #text-section #description-text {
-    font-size: .83rem !important;
+    font-size: 0.83rem !important;
   }
   .icons:hover img {
-    transition: all .3s;
+    transition: all 0.3s;
     transform: translateY(-3px);
     box-shadow: 0 0 30px -2px #6d7f97;
   }
   footer {
-    bottom: 5px;
+    top: 95vh;
   }
 }
 /*# sourceMappingURL=main.css.map */
