@@ -1,5 +1,16 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.css'
+import Popup from "./Popup";
+import "bootstrap/dist/css/bootstrap.css";
+import $ from 'jquery';
+
+// Opens the icons container when the share button is clicked
+function togglePopup() {
+	const toggleContainer = $('#toggle-container');
+
+	toggleContainer.css('max-height', '100px');
+	toggleContainer.css('overflow', 'visible');
+	toggleContainer.css('transform', 'translateY(-75px)');
+}
 
 const Profile = () => {
 	return (
@@ -18,17 +29,20 @@ const Profile = () => {
 					28 Jun 2020
 				</p>
 			</article>
-			
-			<button
-				id="share-btn"
-				className="btn rounded-circle d-flex align-items-center"
-			>
-				<img
-					src={require("../images/icon-share.svg").default}
-					alt=""
-					srcset=""
-				/>
-			</button>
+
+			<span id="button-container">
+				<Popup />
+				<button
+					onClick={togglePopup}
+					id="share-btn"
+					className="rounded-circle d-flex align-items-center"
+				>
+					<img
+						src={require("../images/icon-share.svg").default}
+						alt="share icon"
+					/>
+				</button>
+			</span>
 		</section>
 	);
 };

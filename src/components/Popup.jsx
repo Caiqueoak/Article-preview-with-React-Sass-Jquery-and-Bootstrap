@@ -3,27 +3,36 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const Popup = () => {
 	return (
-		<ul id="toggle-container">
+		<div id="toggle-container">
 			<p id="share-text">SHARE</p>
-			<li className="icons">
-				<img
-					src={require("../images/icon-facebook.svg").default}
-					alt="facebook icon"
-				/>
-			</li>
-			<li className="icons">
-				<img
-					src={require("../images/icon-twitter.svg").default}
-					alt="twitter icon"
-				/>
-			</li>
-			<li className="icons">
-				<img
-					src={require("../images/icon-pinterest.svg").default}
-					alt="pinterest icon"
-				/>
-			</li>
-		</ul>
+			<ul id="icons-container">
+				<li className="icons">
+					<a href="#">
+						<img
+							src={require("../images/icon-facebook.svg").default}
+							alt="facebook icon"
+						/>
+					</a>
+				</li>
+				<li className="icons">
+					<a href="#">
+						<img
+							src={require("../images/icon-twitter.svg").default}
+							alt="twitter icon"
+						/>
+					</a>
+				</li>
+				<li className="icons">
+					<a href="#">
+						<img
+							src={require("../images/icon-pinterest.svg").default}
+							alt="pinterest icon"
+						/>
+					</a>
+				</li>
+			</ul>
+			<div id="square"></div>
+		</div>
 	);
 };
 export default Popup;

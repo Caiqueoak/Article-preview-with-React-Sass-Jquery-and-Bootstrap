@@ -1,15 +1,20 @@
 @import "variables";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
 
+// MOIBLE RESOLUTION
+
 body {
+	@include centered-flex;
 	height: 130vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	background-color: $Light-Grayish-Blue;
 }
 
-// MAIN CONTAINER
+@keyframes hoverAnimation {
+	from {transform: translateY(-75px);}
+	to {transform: translateY(-73px);}
+}
+
+// MAIN COMPONENT
 
 #main-container {
 	background-color: white;
@@ -25,7 +30,6 @@ body {
 		#main-image {
 			border-radius: 10px 10px 0 0;
 			height: 120% !important;
-			//max-height: 275px;
 		}
 	}
 
@@ -36,7 +40,7 @@ body {
 			#header-text {
 				padding-top: 35px;
 				font-size: 1.05rem;
-				line-height: 1.5rem;
+				line-height: 1.7rem;
 				font-weight: 700;
 				color: $Very-Dark-Grayish-Blue;
 			}
@@ -44,7 +48,7 @@ body {
 			#description-text {
 				color: $Desaturated-Dark-Blue;
 				font-size: 0.84rem;
-				line-height: 1.35rem;
+				line-height: 1.3rem;
 			}
 		}
 	}
@@ -62,18 +66,78 @@ body {
 	#{&}-date {
 		color: $Grayish-Blue;
 	}
-	#share-btn {
-		background-color: $Light-Grayish-Blue;
-		width: fit-content;
-		padding: 10px;
-	}
 
-	#toggle-container {
-		
-		.icons {
+	#button-container {
+		@include centered-flex;
+
+		#share-btn {
+			background-color: $Light-Grayish-Blue;
+			width: fit-content;
+			padding: 10px;
+			border: none;
+			transition: all .3s;
+
+			&:hover {
+				box-shadow: 0 0 5px -2px black;
+			}
+		}
+	
+		#toggle-container {
+			@include centered-flex;
+			overflow: hidden;
+			max-height: 0;
+			width: 245px;
+			height: 3.3rem;
+			border-radius: 10px;
+			background-color: $Very-Dark-Grayish-Blue;
+			position: absolute;
+			box-shadow: 0 0 7px -2px black;
+			transform: translateY(-40px);
+			transition: all .3s;
+			animation: hoverAnimation infinite 1s alternate;
+			
+			&:hover {
+				box-shadow: 0 0 10px -2px black;
+			}
+
+			#square {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: $Very-Dark-Grayish-Blue;
+				transform: rotate(45deg);
+				margin-top: 48px;
+				max-height: inherit;
+				transition: inherit;
+			}
+			p {
+				margin: 0;
+				color: $Grayish-Blue;
+				letter-spacing: .27rem;
+				font-size: .7rem;
+			}
+			#icons-container {
+				@include centered-flex;
+				list-style-type: none;
+				margin: 0;
+				column-gap: 13px;
+
+				
+			}
 		}
 	}
 }
+
+// FOOTER COMPONENT
+footer {
+	position: absolute;
+	font-weight: 700;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+}
+
+// DESKTOP/TABLET RESOLUTION
 
 @media screen and (min-width: 768px) {
 	body {
@@ -83,7 +147,7 @@ body {
 	#main-container {
 		background-color: white;
 		width: 85vw;
-		max-width: 715px;
+		max-width: 737px;
 
 		#header-text {
 			font-size: 1.2rem;
@@ -113,5 +177,18 @@ body {
 		#description-text {
 			font-size: .83rem !important;
 		}
+	}
+
+	.icons:hover {
+					
+		img {
+			transition: all .3s;
+			transform: translateY(-3px);
+			box-shadow: 0 0 30px -2px $Desaturated-Dark-Blue;
+		}
+	}
+
+	footer {
+		bottom: 5px;
 	}
 }

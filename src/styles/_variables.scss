@@ -10,3 +10,9 @@ body {
 	font-size: 13px;
 	font-family: $Manrope-font;
 }
+
+@mixin centered-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

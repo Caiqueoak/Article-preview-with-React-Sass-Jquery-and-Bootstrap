@@ -40,7 +40,9 @@ class Main extends Component {
 						{/* PROFILE SECTION */}
 						<Profile />
 					</section>
+
 				</main>
+				
 			</React.StrictMode>
 		);
 	}

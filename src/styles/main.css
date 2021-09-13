@@ -5,11 +5,20 @@ body {
 }
 
 body {
-  height: 130vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 130vh;
   background-color: #ecf2f8;
+}
+
+@keyframes hoverAnimation {
+  from {
+    transform: translateY(-75px);
+  }
+  to {
+    transform: translateY(-73px);
+  }
 }
 
 #main-container {
@@ -37,7 +46,7 @@ body {
 #main-container #text-section #text-section-container #header-text {
   padding-top: 35px;
   font-size: 1.05rem;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
   font-weight: 700;
   color: #48556a;
 }
@@ -45,7 +54,7 @@ body {
 #main-container #text-section #text-section-container #description-text {
   color: #6d7f97;
   font-size: 0.84rem;
-  line-height: 1.35rem;
+  line-height: 1.3rem;
 }
 
 #profile #profile-img {
@@ -61,10 +70,78 @@ body {
   color: #9eafc2;
 }
 
-#profile #share-btn {
+#profile #button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile #button-container #share-btn {
   background-color: #ecf2f8;
   width: fit-content;
   padding: 10px;
+  border: none;
+  transition: all .3s;
+}
+
+#profile #button-container #share-btn:hover {
+  box-shadow: 0 0 5px -2px black;
+}
+
+#profile #button-container #toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 0;
+  width: 245px;
+  height: 3.3rem;
+  border-radius: 10px;
+  background-color: #48556a;
+  position: absolute;
+  box-shadow: 0 0 7px -2px black;
+  transform: translateY(-40px);
+  transition: all .3s;
+  animation: hoverAnimation infinite 1s alternate;
+}
+
+#profile #button-container #toggle-container:hover {
+  box-shadow: 0 0 10px -2px black;
+}
+
+#profile #button-container #toggle-container #square {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #48556a;
+  transform: rotate(45deg);
+  margin-top: 48px;
+  max-height: inherit;
+  transition: inherit;
+}
+
+#profile #button-container #toggle-container p {
+  margin: 0;
+  color: #9eafc2;
+  letter-spacing: .27rem;
+  font-size: .7rem;
+}
+
+#profile #button-container #toggle-container #icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  column-gap: 13px;
+}
+
+footer {
+  position: absolute;
+  font-weight: 700;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -74,7 +151,7 @@ body {
   #main-container {
     background-color: white;
     width: 85vw;
-    max-width: 715px;
+    max-width: 737px;
   }
   #main-container #header-text {
     font-size: 1.2rem;
@@ -98,6 +175,14 @@ body {
   }
   #text-section #description-text {
     font-size: .83rem !important;
+  }
+  .icons:hover img {
+    transition: all .3s;
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px -2px #6d7f97;
+  }
+  footer {
+    bottom: 5px;
   }
 }
 /*# sourceMappingURL=main.css.map */
