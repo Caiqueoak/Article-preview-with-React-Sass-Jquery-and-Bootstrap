@@ -2,26 +2,44 @@ import React, { Component } from "react";
 import Footer from "./Footer";
 import Profile from "./Profile";
 import "bootstrap/dist/css/bootstrap.css";
+import $ from 'jquery'
+
+// Closes the share icons container when the user clicks out of it.
+
+let mouseOver = false;
+
+// Defines a boolean value for user's mouse in the icons container event.
+$('#toggle-container').hover(() => {
+    mouseOver = true;
+  },
+  () => {
+    mouseOver = false;
+  }
+)
+
+// Closes the icons container if its visible and the mouse its not over it.
+$("*").on("click", () => {
+	const toggleContainer = $('#toggle-container');
+
+	if(!(toggleContainer.css('max-height') == '0px') && !mouseOver) {
+    toggleContainer.css('max-height', '0');
+		toggleContainer.css('overflow', 'hidden');
+		toggleContainer.css('transform', 'translateY(-40px)');
+	}
+});
 
 class Main extends Component {
 	constructor(props) {
 		super(props);
 	}
-	
-	closePopup() {
-		if (!(this.state.maxHeight == "0") && !this.state.mouseOver) {
-			
-		}
-	}
 
 	render() {
 		return (
-			<React.StrictMode>
+			<>
 				{/* MAIN CONTAINER */}
-				<div
-					id="main-wrapper"
+				<div 
+					id="main-wrapper" 
 					className="d-flex align-items-center"
-					onClick={closePopup}
 				>
 					<main
 						className="container p-0 pb-4 p-md-0 row mx-auto"
@@ -62,7 +80,7 @@ class Main extends Component {
 
 					<Footer />
 				</div>
-			</React.StrictMode>
+			</>
 		);
 	}
 }

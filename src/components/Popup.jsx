@@ -2,23 +2,15 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
 class Popup extends React.Component {
-	constructor(props){
-		super(props)
-
-		this.state = {
-			mouseOver: false,
-		}
+	constructor(props) {
+		super(props);
 	}
 
 	render() {
 		return (
 			<div 
 				id="toggle-container"
-				onMouseEnter={() => !this.state.mouseOver}
-				onMouseLeave={() => !this.state.mouseOver}
-				onClick={this.props.className}
-				className={`${this.state.className}`}
-				>
+			>
 				<p id="share-text">SHARE</p>
 				<ul id="icons-container">
 					<li className="icons">
@@ -50,5 +42,5 @@ class Popup extends React.Component {
 			</div>
 		);
 	}
-};
+}
 export default Popup;
