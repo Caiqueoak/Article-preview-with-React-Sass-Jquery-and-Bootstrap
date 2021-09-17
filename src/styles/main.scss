@@ -17,21 +17,10 @@ body {
 		transform: translateY(-73px);
 	}
 }
-@keyframes slideUpAnimation {
-	from {
-		transform: translateY(-40px);
-	}
-	to {
-		transform: translateY(-75px);
-	}
-}
-@keyframes slideDownAnimation {
-	from {
-		transform: translateY(-75px);
-	}
-	to {
-		transform: translateY(-40px);
-	}
+
+#main-wrapper {
+	height: 100vh;
+	width: 100vw;
 }
 
 // MAIN COMPONENT
@@ -104,17 +93,25 @@ body {
 
 		#toggle-container {
 			@include centered-flex;
-			overflow: hidden;
-			max-height: 0;
 			width: 245px;
 			height: 3.3rem;
 			border-radius: 10px;
 			background-color: $Very-Dark-Grayish-Blue;
 			position: absolute;
 			box-shadow: 0 0 7px -2px black;
-			transform: translateY(-40px);
 			transition: all 0.3s;
 			//animation: slideUpAnimation forwards .4s;
+
+			.toggle-container-on {
+				transform: translateY(-75px);
+				max-height: 100px;
+				overflow: visible;
+			}
+			.toggle-container-off {
+				transform: translateY(-40px);
+				max-height: 0;
+				overflow: hidden;
+			}
 
 			&:hover {
 				box-shadow: 0 0 10px -2px black;
@@ -170,6 +167,7 @@ footer {
 		background-color: white;
 		width: 85vw;
 		max-width: 737px;
+		height: 50vh;
 
 		#header-text {
 			font-size: 1.2rem;
