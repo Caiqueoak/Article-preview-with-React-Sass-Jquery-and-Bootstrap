@@ -3,6 +3,7 @@
 
 // MOIBLE RESOLUTION
 
+#root,
 #main-wrapper {
 	@include centered-flex;
 	height: 130vh;
@@ -16,12 +17,6 @@
 	to {
 		transform: translateY(-73px);
 	}
-}
-
-#main-wrapper {
-	height: 100vh;
-	width: 100vw;
-	background-color: $Light-Grayish-Blue;
 }
 
 // MAIN COMPONENT
@@ -94,8 +89,10 @@
 
 		#toggle-container {
 			@include centered-flex;
-			width: 245px;
-			height: 3.3rem;
+			flex-direction: column-reverse;
+			width: 60px;
+			row-gap: 15px;
+			height: 150px;
 			border-radius: 10px;
 			background-color: $Very-Dark-Grayish-Blue;
 			position: absolute;
@@ -104,11 +101,9 @@
 			transform: translateY(-40px);
 			max-height: 0;
 			overflow: hidden;
-			//animation: slideUpAnimation forwards .4s;
 
 			&:hover {
 				box-shadow: 0 0 10px -2px black;
-				//animation: bounceAnimation 0.3s infinite alternate;
 			}
 
 			#square {
@@ -117,20 +112,26 @@
 				height: 20px;
 				background-color: $Very-Dark-Grayish-Blue;
 				transform: rotate(45deg);
-				margin-top: 48px;
+				margin-top: 140px;
 				max-height: inherit;
 				transition: inherit;
+				z-index: -99;
 			}
 			p {
 				margin: 0;
 				color: $Grayish-Blue;
-				letter-spacing: 0.27rem;
+				letter-spacing: 0.1rem;
 				font-size: 0.7rem;
 			}
 			#icons-container {
+				position: relative;
 				@include centered-flex;
+				row-gap: 10px;
+				flex-direction: column;
 				list-style-type: none;
 				margin: 0;
+				padding: 0;
+				top: 0;
 				column-gap: 13px;
 			}
 		}
@@ -152,15 +153,16 @@ footer {
 // DESKTOP/TABLET RESOLUTION
 
 @media screen and (min-width: 768px) {
+	#root,
 	#main-wrapper {
 		height: 100vh;
 	}
-
 	#main-container {
 		background-color: white;
 		width: 85vw;
 		max-width: 737px;
 		height: 47vh;
+		min-height: 300px;
 
 		#header-text {
 			font-size: 1.2rem;
@@ -180,9 +182,50 @@ footer {
 		}
 	}
 
-	#text-section {
-		padding: 0 0px;
+	#button-container {
+		@include centered-flex;
 
+		#share-btn {
+			width: fit-content;
+			padding: 10px;
+			border: none;
+			transition: all 0.3s;
+
+			&:hover {
+				box-shadow: 0 0 5px -2px black;
+			}
+		}
+
+		#toggle-container {
+			@include centered-flex;
+			flex-direction: row !important;
+			width: 28vw !important;
+			max-width: 245px;
+			height: 3.3rem !important;
+			row-gap: 0;
+			transform: translateY(-75px) !important;
+			justify-content: space-evenly !important;
+
+			#square {
+				margin-top: 48px !important;
+			}
+			p {
+				letter-spacing: 0.27rem !important;
+			}
+			#icons-container {
+				position: relative;
+				@include centered-flex;
+				row-gap: 10px;
+				flex-direction: row !important;
+				margin: 0;
+				padding: 0;
+				top: 0;
+				column-gap: 13px;
+			}
+		}
+	}
+
+	#text-section {
 		#header-text {
 			font-size: 1.2rem !important;
 		}

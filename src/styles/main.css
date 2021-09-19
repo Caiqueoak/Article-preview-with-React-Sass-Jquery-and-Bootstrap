@@ -4,6 +4,7 @@
   font-family: "Manrope", sans-serif;
 }
 
+#root,
 #main-wrapper {
   display: flex;
   align-items: center;
@@ -19,12 +20,6 @@
   to {
     transform: translateY(-73px);
   }
-}
-
-#main-wrapper {
-  height: 100vh;
-  width: 100vw;
-  background-color: #ecf2f8;
 }
 
 #main-container {
@@ -98,8 +93,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 245px;
-  height: 3.3rem;
+  flex-direction: column-reverse;
+  width: 60px;
+  row-gap: 15px;
+  height: 150px;
   border-radius: 10px;
   background-color: #48556a;
   position: absolute;
@@ -120,24 +117,30 @@
   height: 20px;
   background-color: #48556a;
   transform: rotate(45deg);
-  margin-top: 48px;
+  margin-top: 140px;
   max-height: inherit;
   transition: inherit;
+  z-index: -99;
 }
 
 #profile #button-container #toggle-container p {
   margin: 0;
   color: #9eafc2;
-  letter-spacing: 0.27rem;
+  letter-spacing: 0.1rem;
   font-size: 0.7rem;
 }
 
 #profile #button-container #toggle-container #icons-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  row-gap: 10px;
+  flex-direction: column;
   list-style-type: none;
   margin: 0;
+  padding: 0;
+  top: 0;
   column-gap: 13px;
 }
 
@@ -153,6 +156,7 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  #root,
   #main-wrapper {
     height: 100vh;
   }
@@ -161,6 +165,7 @@ footer {
     width: 85vw;
     max-width: 737px;
     height: 47vh;
+    min-height: 300px;
   }
   #main-container #header-text {
     font-size: 1.2rem;
@@ -176,8 +181,49 @@ footer {
     height: 100% !important;
     max-height: none;
   }
-  #text-section {
-    padding: 0 0px;
+  #button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #button-container #share-btn {
+    width: fit-content;
+    padding: 10px;
+    border: none;
+    transition: all 0.3s;
+  }
+  #button-container #share-btn:hover {
+    box-shadow: 0 0 5px -2px black;
+  }
+  #button-container #toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row !important;
+    width: 28vw !important;
+    max-width: 245px;
+    height: 3.3rem !important;
+    row-gap: 0;
+    transform: translateY(-75px) !important;
+    justify-content: space-evenly !important;
+  }
+  #button-container #toggle-container #square {
+    margin-top: 48px !important;
+  }
+  #button-container #toggle-container p {
+    letter-spacing: 0.27rem !important;
+  }
+  #button-container #toggle-container #icons-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    flex-direction: row !important;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    column-gap: 13px;
   }
   #text-section #header-text {
     font-size: 1.2rem !important;

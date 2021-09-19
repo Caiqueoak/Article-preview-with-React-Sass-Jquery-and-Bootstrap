@@ -2,31 +2,6 @@ import React, { Component } from "react";
 import Footer from "./Footer";
 import Profile from "./Profile";
 import "bootstrap/dist/css/bootstrap.css";
-import $ from 'jquery'
-
-// Closes the share icons container when the user clicks out of it.
-
-let mouseOver = false;
-
-// Defines a boolean value for user's mouse in the icons container event.
-$('#toggle-container').hover(() => {
-    mouseOver = true;
-  },
-  () => {
-    mouseOver = false;
-  }
-)
-
-// Closes the icons container if its visible and the mouse its not over it.
-$("*").on("click", () => {
-	const toggleContainer = $('#toggle-container');
-
-	if(!(toggleContainer.css('max-height') == '0px') && !mouseOver) {
-    toggleContainer.css('max-height', '0');
-		toggleContainer.css('overflow', 'hidden');
-		toggleContainer.css('transform', 'translateY(-40px)');
-	}
-});
 
 class Main extends Component {
 	constructor(props) {
@@ -46,7 +21,7 @@ class Main extends Component {
 						id="main-container"
 					>
 						{/* MAIN IMAGE */}
-						<div id="img-wrapper" className="p-0 col-12 col-md-6 col-lg-6">
+						<div id="img-wrapper" className="p-0 col-12 col-md-6">
 							<img
 								src={require("../images/drawers.jpg").default}
 								alt="drawers"
