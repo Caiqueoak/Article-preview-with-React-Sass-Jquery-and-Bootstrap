@@ -204,7 +204,6 @@ footer {
     max-width: 245px;
     height: 3.3rem !important;
     row-gap: 0;
-    transform: translateY(-75px) !important;
     justify-content: space-evenly !important;
   }
   #button-container #toggle-container #square {
